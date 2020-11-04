@@ -37,13 +37,23 @@
       </nav>
       <!--Fim da barra de navegação -->
     </header>
+
     <main class="container">
+      <h2>Apagar produtos</h2>
       <form onsubmit="return false">
-        <input type="text" id="txtnome" placeholder="Nome Produtos" />
-        <textarea id="txtdescricao" placeholder="descricao"></textarea>
-        <input type="text" id="txtpreco" placeholder="preco" />
-        <input type="text" id="txtimagem" placeholder="imagem" />
-        <button id="btncadastrar" onclick="cadastrar()">Cadastrar</button>
+        <label>Selecione o ID do produto que deseja apagar</label>
+        <select id="idproduto">
+          <option value="selecione">selecione</option>
+
+          <script>
+            for (var i = 1; i <= 300; i++) {
+              document.getElementById("idproduto").innerHTML +=
+                "<option value=" + i + ">" + i + "</option>";
+            }
+          </script>
+        </select>
+
+        <button id="btnapagar" onclick="apagar()">Apagar</button>
       </form>
     </main>
     <footer id="rodape"></footer>
